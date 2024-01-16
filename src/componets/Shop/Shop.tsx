@@ -2,8 +2,7 @@ import './shop.scss'
 import Product from "../Product/Product.jsx";
 import Modal from "../Modal/Modal.tsx";
 import Button from "../Button/Button.tsx";
-import {useRef, useState} from "react";
-// import {useState} from "react";
+import {useState} from "react";
 
 const data: Item[] = [
     {

@@ -9,9 +9,6 @@ const Modal: FC<ModalProps> = ({children, open}) => {
     const dialog = useRef<HTMLDialogElement>(null)
 
     useEffect(() => {
-
-        console.log(dialog.current.querySelector('::backdrop'))
-
         return  open ? dialog.current?.showModal() : dialog.current?.close()
     }, [open])
 
