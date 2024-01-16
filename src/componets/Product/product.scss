@@ -1,0 +1,30 @@
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--bg);
+  border: 1px solid var(--stroke);
+
+  &__name {
+    font: var(--h4);
+    color: var(--head);
+  }
+  &__count {
+    display: flex;
+    flex-direction: column;
+    font: var(--p1);
+    color: var(--bg-dark);
+  }
+  &__label {
+    font: var(--p2);
+    color: var(--text);
+    opacity: .8;
+  }
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,49 @@
+main {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--card);
+    margin-top: 0.9rem;
+    margin-bottom: 0.8em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h1 {
+    font: var(--h1);
+  }
+  h2 {
+    font: var(--h2);
+  }
+  h3 {
+    font: var(--h3);
+  }
+  h4 {
+    font: var(--h4);
+  }
+  h5 {
+    font: var(--h5);
+  }
+  h6 {
+    font: var(--h6);
+  }
+  strong {
+    font-family: var(--font-s);
+    font-weight: 800;
+  }
+  p,
+  li {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  li {
+    margin-bottom: 7px;
+  }
+}

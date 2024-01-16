@@ -1,0 +1,26 @@
+:root {
+  --primary: #9137a4;
+  --hover: #fd2f22;
+  --btn: linear-gradient(130.84deg, #006FFF 0%,transparent 100%) #006FFF;
+  --bg: #f2f2f5;
+  --bg-dark: #191D3E;
+  --card: #FFFFFF;
+  --stroke: #cbcbcb;
+  --head: #242531;
+  --text: #262A49;
+  --error: #ff8080;
+
+  /* Fonts */
+  --font: 'Ubuntu', sans-serif;
+
+  --h1: 600 clamp(30px, calc(30px + 20 * (100vw - 320px) / 1430), 50px)/100% var(--font);
+  --h2: 700 clamp(24px, calc(24px + 18 * (100vw - 320px) / 1430), 42px)/100% var(--font);
+  --h3: 700 clamp(24px, calc(24px + 8 * (100vw - 320px) / 1430), 32px)/100% var(--font);
+  --h4: 700 clamp(18px, calc(18px + 6 * (100vw - 320px) / 1430), 24px)/100% var(--font);
+  --h5: 700 clamp(16px, calc(16px + 4 * (100vw - 320px) / 1430), 20px)/100% var(--font);
+  --h6: 700 clamp(14px, calc(14px + 2 * (100vw - 320px) / 1430), 16px)/100% var(--font);
+
+  --p1: 400 clamp(18px, calc(18px + 4 * (100vw - 320px) / 1430), 22px)/150% var(--font);
+  --p2: 400 clamp(16px, calc(16px + 2 * (100vw - 320px) / 1430), 18px)/150% var(--font);
+  --p3: 400 14px/130% var(--font);
+}
