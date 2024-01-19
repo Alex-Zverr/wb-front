@@ -12,4 +12,24 @@
     flex-direction: column;
     gap: 10px;
   }
+  &__modal {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      color: var(--primary);
+      font: var(--h3);
+      margin-bottom: .8em;
+    }
+    &-input {
+      width: 100%;
+      margin-bottom: 15px;
+      font: var(--p2);
+      color: var(--text);
+    }
+    &-btn {
+      margin-left: auto;
+    }
+  }
 }

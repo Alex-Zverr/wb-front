@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Товар 1",
+      "count_full": 140,
+      "count_sort": 90,
+      "count": 50
+    },
+    {
+      "id": "2",
+      "name": "Товар 2",
+      "count_full": 200,
+      "count_sort": 150,
+      "count": 50
+    },
+    {
+      "id": "3",
+      "name": "Товар 3",
+      "count_full": 60,
+      "count_sort": 30,
+      "count": 30
+    },
+    {
+      "id": "4",
+      "name": "Товар 4",
+      "count_full": 160,
+      "count_sort": 60,
+      "count": 100
+    },
+    {
+      "id": "5",
+      "name": "Товар 5",
+      "count_full": 180,
+      "count_sort": 80,
+      "count": 190
+    }
+  ]
+}
