@@ -9,8 +9,7 @@ interface ProductProps {
 }
 
 interface CustomElements extends HTMLFormControlsCollection   {
-    add: HTMLInputElement;
-    delete: HTMLInputElement;
+    count: HTMLInputElement;
 }
 
 interface CustomForm extends HTMLFormElement {
@@ -21,14 +20,32 @@ const Product: FC<ProductProps> = ({item}) => {
 
     const [addModal, setAddModal] = useState(false)
     const [deleteModal, setDeleteModal] = useState(false)
+    const [sortModal, setSortModal] = useState(false)
 
-    const handleSubmit = (e: FormEvent<CustomForm>) => {
+    const handleSubmit = (e: FormEvent<CustomForm>, type: string) => {
         e.preventDefault()
         const target = e.currentTarget.elements;
-        const count = target.add ? +target.add.value : -target.delete.value;
-        upDateProduct(item, count).then();
-        setAddModal(false)
-        setDeleteModal(false)
+
+        switch (type) {
+            case 'add':
+                item['count_sort'] += (+target.count.value);
+                item['count_full'] += (+target.count.value);
+                upDateProduct(item).then();
+                setAddModal(false);
+                break;
+            case 'sort':
+                console.log('sort')
+                item['count_sort'] -= (+target.count.value);
+                item['count'] += (+target.count.value);
+                setSortModal(false);
+                break;
+            case 'delete':
+                item['count_full'] -= (+target.count.value);
+                item['count'] -= (+target.count.value);
+                upDateProduct(item).then();
+                setDeleteModal(false);
+                break;
+        }
     }
 
     return (
@@ -36,33 +53,41 @@ const Product: FC<ProductProps> = ({item}) => {
             <div className="product">
                 <span className="product__name">{item.name}</span>
                 <div className="product__count">
-                    <span className="product__label">Товара упаковано</span>
-                    {item.count}
+                    <span className="product__label">Всего товара</span>
+                    {item.count_full}
                 </div>
                 <div className="product__count">
                     <span className="product__label">Товар на сартировке</span>
                     {item.count_sort}
                 </div>
                 <div className="product__count">
-                    <span className="product__label">Всего товара</span>
-                    {item.count_full}
+                    <span className="product__label">Товара упаковано</span>
+                    {item.count}
                 </div>
                 <div className="product__buttons">
                     <Button onClick={() => setAddModal(!addModal)}>Новый</Button>
+                    <Button onClick={() => setSortModal(!sortModal)} view={'btn--second'}>Упакованы</Button>
                     <Button onClick={() => setDeleteModal(!deleteModal)} view={'btn--delete'}>Проданный</Button>
                 </div>
             </div>
             <Modal isVisible={addModal} onClose={() => setAddModal(false)}>
                 <h1 className="shop__modal-title">Добавить товар на склад</h1>
-                <form onSubmit={handleSubmit}>
-                    <input className="shop__modal-input" id="count" type="number" name="add" placeholder="Поступления"/>
+                <form onSubmit={(event : FormEvent<CustomForm>) => handleSubmit(event, 'add')}>
+                    <input className="shop__modal-input" id="count" type="number" name="count" placeholder="Поступления"/>
+                    <Button>Подтвердить</Button>
+                </form>
+            </Modal>
+            <Modal isVisible={sortModal} onClose={() => setSortModal(false)}>
+                <h1 className="shop__modal-title">Упаковано товара</h1>
+                <form onSubmit={(event: FormEvent<CustomForm>) => handleSubmit(event, 'sort')}>
+                    <input className="shop__modal-input" id="count" type="number" name="count" placeholder="Упаковано"/>
                     <Button>Подтвердить</Button>
                 </form>
             </Modal>
             <Modal isVisible={deleteModal} onClose={() => setDeleteModal(false)}>
                 <h1 className="shop__modal-title">Удалить товар</h1>
-                <form onSubmit={handleSubmit}>
-                    <input className="shop__modal-input" id="count" type="number" name="delete" placeholder="Проданно"/>
+                <form onSubmit={(event: FormEvent<CustomForm>) => handleSubmit(event, 'delete')}>
+                    <input className="shop__modal-input" id="count" type="number" name="count" placeholder="Проданно"/>
                     <Button>Подтвердить</Button>
                 </form>
             </Modal>

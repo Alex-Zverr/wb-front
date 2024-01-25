@@ -3,9 +3,9 @@
     {
       "id": "1",
       "name": "Товар 1",
-      "count_full": 140,
-      "count_sort": 90,
-      "count": 50
+      "count_full": 505,
+      "count_sort": 455,
+      "count": 40
     },
     {
       "id": "2",
@@ -17,9 +17,9 @@
     {
       "id": "3",
       "name": "Товар 3",
-      "count_full": 60,
-      "count_sort": 30,
-      "count": 30
+      "count_full": 120,
+      "count_sort": 100,
+      "count": 20
     },
     {
       "id": "4",
@@ -31,9 +31,9 @@
     {
       "id": "5",
       "name": "Товар 5",
-      "count_full": 180,
-      "count_sort": 80,
-      "count": 190
+      "count_full": 150,
+      "count_sort": 110,
+      "count": 40
     }
   ]
 }
