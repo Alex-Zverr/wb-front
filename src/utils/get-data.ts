@@ -11,9 +11,10 @@ export const getProductData = async (): Promise<Item[]> => {
         throw error;
     }
 }
-export const getProductDataById = async (item_id: number): Promise<Item> => {
+export const createProduct = async ( item: ItemCreate): Promise<Item> => {
     try {
-        const response: AxiosResponse<Item> = await axios.get(`${API_URL}/products/${item_id}`);
+        const response: AxiosResponse<Item> = await axios.post(`${API_URL}/products`, item);
+
         return response.data;
     } catch (error) {
         console.log('error')
@@ -22,7 +23,7 @@ export const getProductDataById = async (item_id: number): Promise<Item> => {
 }
 export const upDateProduct = async ( item: Item): Promise<Item> => {
     try {
-        const response: AxiosResponse<Item> = await axios.put(`${API_URL}/products/${item.id}`, item);
+        const response: AxiosResponse<Item> = await axios.patch(`${API_URL}/products/${item.id}`, item);
 
         return response.data;
     } catch (error) {

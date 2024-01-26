@@ -1,6 +1,6 @@
 .shop {
   width: 100%;
-  height: 600px;
+  margin-bottom: 60px;
 
   &__title {
     color: var(--primary);
@@ -31,5 +31,14 @@
     &-btn {
       margin-left: auto;
     }
+  }
+  .shop__btn-create {
+    margin-top: 20px;
+    display: flex;
+    margin-left: auto;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
   }
 }
